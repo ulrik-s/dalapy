@@ -1,0 +1,25 @@
+[project]
+name = "dalapy"
+version = "0.1.0"
+description = "A basic project using returns and pydantic v2"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "returns",
+    "pydantic>=2",
+    "filelock",
+]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov"]
+
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["dalapy"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=dalapy --cov-report=term-missing"
