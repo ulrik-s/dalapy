@@ -1,4 +1,5 @@
-from dalapy import Env, Repo, User, collection_for
+from dalapy import Env, Repo, collection_for
+from example_project import User
 from returns.io import IOFailure, IOSuccess
 
 

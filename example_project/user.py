@@ -3,7 +3,7 @@
 from pydantic import ConfigDict
 from pydantic.dataclasses import dataclass as pyd_dataclass
 
-from .has_id import HasId
+from dalapy.has_id import HasId
 
 
 @pyd_dataclass(config=ConfigDict(extra="ignore"))
