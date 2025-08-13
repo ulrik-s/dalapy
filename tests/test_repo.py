@@ -1,4 +1,12 @@
-from dalapy import Env, Repo, User, collection_for
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.append(str(ROOT / "src"))
+sys.path.append(str(ROOT))
+
+from dalapy import Env, Repo, collection_for
+from example_project import User
 from returns.io import IOFailure, IOSuccess
 
 
