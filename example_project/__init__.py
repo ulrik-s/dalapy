@@ -1,7 +1,5 @@
-"""Example project models using the dalapy module."""
+"""Example project using dalapy's built-in models."""
 
-from .product import Product
-from .user import User
+from dalapy import User, Product
 
-__all__ = ["Product", "User"]
-
+__all__ = ["User", "Product"]
