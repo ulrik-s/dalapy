@@ -5,7 +5,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(ROOT / "src"))
 sys.path.append(str(ROOT))
 
-from dalapy import Env, User, Users, shutdown_env
+from dalapy import Env, shutdown_env
+from example_project import User, Users
 from returns.io import IOFailure, IOSuccess
 
 
