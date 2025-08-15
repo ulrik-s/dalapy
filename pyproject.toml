@@ -8,6 +8,7 @@ dependencies = [
     "returns",
     "pydantic>=2",
     "filelock",
+    "tinydb",
 ]
 
 [project.optional-dependencies]
