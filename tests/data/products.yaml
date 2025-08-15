@@ -1,0 +1,8 @@
+- id: 1
+  sku: ABC
+  price: 100.0
+  currency: SEK
+- id: 2
+  sku: DEF
+  price: 200.0
+  currency: SEK
