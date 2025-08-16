@@ -9,6 +9,7 @@ dependencies = [
     "pydantic>=2",
     "filelock",
     "tinydb",
+    "pyyaml",
 ]
 
 [project.optional-dependencies]
