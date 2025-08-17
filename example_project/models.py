@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Optional
+from typing import Optional, List
 
 from pydantic import ConfigDict
 from pydantic.dataclasses import dataclass as pyd_dataclass
@@ -22,6 +22,14 @@ class Product:
     sku: str
     price: float = 0.0
     currency: str = "SEK"
+    version: Optional[str] = None
 
 
-__all__ = ["User", "Product"]
+@pyd_dataclass(config=ConfigDict(extra="ignore"))
+class System:
+    id: int
+    name: str
+    product_ids: List[int]
+
+
+__all__ = ["User", "Product", "System"]

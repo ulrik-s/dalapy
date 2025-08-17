@@ -1,0 +1,5 @@
+id: 1
+name: DemoSystem
+products:
+  - widget-1.0.tar.gz
+  - gadget-2.0.tar.gz
