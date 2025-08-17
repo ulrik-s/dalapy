@@ -7,16 +7,14 @@ lives in its own module making it simple to extend the domain.
 
 ## Development
 
-Create a virtual environment and install dependencies:
+Install dependencies with [uv](https://github.com/astral-sh/uv):
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .[test]
+uv sync --extra test
 ```
 
-Run tests with coverage:
+Run tests and display coverage statistics:
 
 ```bash
-pytest
+uv run pytest
 ```
