@@ -23,6 +23,7 @@ class Product:
     price: float = 0.0
     currency: str = "SEK"
     version: Optional[str] = None
+    tag: Optional[str] = None
 
 
 @pyd_dataclass(config=ConfigDict(extra="ignore"))
@@ -32,4 +33,11 @@ class System:
     product_ids: List[int]
 
 
-__all__ = ["User", "Product", "System"]
+@pyd_dataclass(config=ConfigDict(extra="ignore"))
+class ProductGroup:
+    id: int
+    tag: str
+    path: str
+
+
+__all__ = ["User", "Product", "System", "ProductGroup"]

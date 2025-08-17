@@ -6,7 +6,7 @@ from pydantic import TypeAdapter
 
 from dalapy import UniqueRule, RepoSpec, repo_factory
 
-from .models import User, Product, System
+from .models import User, Product, System, ProductGroup
 
 
 USER_SPEC = RepoSpec[User](
@@ -27,9 +27,16 @@ SYSTEM_SPEC = RepoSpec[System](
     unique=(UniqueRule("name", nocase=True),),
 )
 
+PRODUCT_GROUP_SPEC = RepoSpec[ProductGroup](
+    table_name="product_groups",
+    adapter=TypeAdapter(ProductGroup),
+    unique=(UniqueRule("tag", nocase=False),),
+)
+
 Users = repo_factory(USER_SPEC)
 Products = repo_factory(PRODUCT_SPEC)
 Systems = repo_factory(SYSTEM_SPEC)
+ProductGroups = repo_factory(PRODUCT_GROUP_SPEC)
 
 __all__ = [
     "USER_SPEC",
@@ -38,4 +45,6 @@ __all__ = [
     "Products",
     "SYSTEM_SPEC",
     "Systems",
+    "PRODUCT_GROUP_SPEC",
+    "ProductGroups",
 ]

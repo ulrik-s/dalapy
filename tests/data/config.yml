@@ -1,0 +1,13 @@
+product_groups:
+  - id: 1
+    tag: widget
+    path: products/widget
+  - id: 2
+    tag: gadget
+    path: products/gadget
+
+products:
+  - id: 1
+    tag: widget
+  - id: 2
+    tag: gadget
