@@ -44,18 +44,18 @@ class DataAPI:
         return Products.get_by_unique_flow("sku", sku)(self.env)
 
     def list_product_versions(self) -> IOResult[Set[str], str]:
-        res = Products.list_flow()(self.env)
-        if isinstance(res, IOFailure):
-            return res
-        products = res.unwrap()._inner_value
-        return IOSuccess({p.version for p in products if p.version})
+        return Products.list_flow()(self.env).map(
+            lambda products: {p.version for p in products if p.version}
+        )
 
     # ---- Systems -------------------------------------------------------
     def create_system(self, system: System) -> IOResult[System, str]:
         for pid in system.product_ids:
-            exists_res = Products.exists_by_flow("id", pid)(self.env)
-            if isinstance(exists_res, IOFailure) or not exists_res.unwrap()._inner_value:
-                return IOFailure("missing_product")
+            exists_res = Products.exists_by_flow("id", pid)(self.env).bind(
+                lambda exists: IOSuccess(True) if exists else IOFailure("missing_product")
+            )
+            if isinstance(exists_res, IOFailure):
+                return exists_res
         return Systems.create_flow(system)(self.env)
 
     def list_systems(self) -> IOResult[List[System], str]:
@@ -68,40 +68,32 @@ class DataAPI:
         return Systems.get_by_flow("name", name, nocase=True)(self.env)
 
     def list_system_names(self) -> IOResult[List[str], str]:
-        res = self.list_systems()
-        if isinstance(res, IOFailure):
-            return res
-        systems = res.unwrap()._inner_value
-        return IOSuccess([s.name for s in systems])
+        return self.list_systems().map(lambda systems: [s.name for s in systems])
 
     def get_products_for_system(self, system_name: str) -> IOResult[List[Product], str]:
-        sys_res = self.get_system_by_name(system_name)
-        if isinstance(sys_res, IOFailure):
-            return sys_res
-        system = sys_res.unwrap()._inner_value
-        products: List[Product] = []
-        for pid in system.product_ids:
-            p_res = self.get_product(pid)
-            if isinstance(p_res, IOFailure):
-                return p_res
-            products.append(p_res.unwrap()._inner_value)
-        return IOSuccess(products)
+        def _collect(system: System) -> IOResult[List[Product], str]:
+            result: IOResult[List[Product], str] = IOSuccess([])
+            for pid in system.product_ids:
+                result = result.bind(
+                    lambda acc, pid=pid: self.get_product(pid).map(lambda p: acc + [p])
+                )
+            return result
+
+        return self.get_system_by_name(system_name).bind(_collect)
 
     def list_product_skus_prices_for_system(self, system_name: str) -> IOResult[List[Tuple[str, float]], str]:
-        prods_res = self.get_products_for_system(system_name)
-        if isinstance(prods_res, IOFailure):
-            return prods_res
-        products = prods_res.unwrap()._inner_value
-        return IOSuccess([(p.sku, p.price) for p in products])
+        return self.get_products_for_system(system_name).map(
+            lambda products: [(p.sku, p.price) for p in products]
+        )
 
     def get_product_in_system_by_version(self, system_name: str, version: str) -> IOResult[Product, str]:
-        prods_res = self.get_products_for_system(system_name)
-        if isinstance(prods_res, IOFailure):
-            return prods_res
-        for p in prods_res.unwrap()._inner_value:
-            if p.version == version:
-                return IOSuccess(p)
-        return IOFailure("not_found")
+        def _find(products: List[Product]) -> IOResult[Product, str]:
+            for p in products:
+                if p.version == version:
+                    return IOSuccess(p)
+            return IOFailure("not_found")
+
+        return self.get_products_for_system(system_name).bind(_find)
 
 
 __all__ = ["DataAPI"]

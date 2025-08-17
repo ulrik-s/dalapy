@@ -64,8 +64,7 @@ def test_system_loading(tmp_path):
 
     # query products belonging to a system and list their sku and price
     skus_prices = api.list_product_skus_prices_for_system("DemoSystem")
-    assert isinstance(skus_prices, IOSuccess)
-    assert set(skus_prices.unwrap()._inner_value) == {("WID", 50.0), ("GAD", 75.0)}
+    assert skus_prices.map(set) == IOSuccess({("WID", 50.0), ("GAD", 75.0)})
 
     assert api.get_product_in_system_by_version("DemoSystem", "1.0") == IOSuccess(product1)
     assert api.get_product_in_system_by_version("DemoSystem", "2.0") == IOSuccess(product2)
