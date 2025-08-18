@@ -1,0 +1,3033 @@
+manifest:
+  type: modules
+  format-version: 1.0.0
+
+metadata:
+  hp-layers: metadata/hp/architecture.yml
+
+default-package-manager: artifactory-gavc
+
+# For module group como variant names please refer to:
+# https://hpdevp.volvocars.net/Guidelines/hp-platform-documentation/variant_handling/build_variants.html#module-groups
+module-groups:
+  # SPA2 only ADAS/AD shared enablers, independent on HPA or HPB.
+  # NOTE: Primarily intended while building up support in SPA3;
+  # long-term, most modules should be moved to [0HBA-A7Z, 0HBA-60T] group.
+  - como-variant: [FGU5-312, 0HBA-A7Z, 0HBA-60T]
+    modules:
+      dp-flr:
+        version: 4.9.8
+      dp-fsrl:
+        version: 4.9.8
+      dp-fsrr:
+        version: 4.9.8
+      dp-rsrl:
+        version: 4.9.8
+      dp-rsrr:
+        version: 4.9.8
+
+  # Generic SPA2 modules (only).
+  - como-variant: [C5X1-0AW, TSUS-5J6, FGU5-312]
+    modules:
+      adjustable-steering-wheel:
+        version: 1.0.5
+
+      assistance-call-adapter:
+        version: 1.2.5
+
+      aud-admin:
+        version: 2.0.29
+
+      brake-control-impl-spa2:
+        version: 2.0.1
+
+      carconfig-adapter:
+        version: 1.6.12
+
+      conversion_control:
+        version: 3.7.2
+
+      cp-hia-spa2:
+        version: 1.0.1
+
+      dap-aud:
+        version: 1.0.26
+
+      dap-bcma:
+        version: 2.7.1
+
+      dap-bms:
+        version: 1.2.9
+
+      dap-ccmb:
+        version: 2.7.0
+
+      dap-crsm:
+        version: 2.7.0
+
+      dap-ddm:
+        version: 2.7.0
+
+      dap-dhuh:
+        version: 1.1.18
+
+      dap-dlpl:
+        version: 2.8.0
+
+      dap-dlpr:
+        version: 2.8.0
+
+      dap-etcm:
+        version: 2.9.0
+
+      dap-fioc:
+        version: 2.7.2
+
+      dap-flr:
+        version: 4.9.12
+
+      dap-fsrl:
+        version: 4.9.12
+
+      dap-fsrr:
+        version: 4.9.12
+
+      dap-gccc:
+        version: 1.5.1
+
+      dap-ghca:
+        version: 1.6.2
+
+      dap-hcml:
+        version: 2.8.0
+
+      dap-hcmr:
+        version: 2.8.0
+
+      dap-hlcm:
+        version: 1.4.12
+
+      dap-hod:
+        version: 1.3.0
+
+      dap-hvbm:
+        version: 2.7.2
+
+      dap-ihfa:
+        version: 1.4.34
+
+      dap-ihra:
+        version: 1.4.34
+
+      dap-lpc:
+        version: 2.7.0
+
+      dap-msm:
+        version: 1.4.2
+
+      dap-pdm:
+        version: 2.7.0
+
+      dap-pot:
+        version: 2.7.0
+
+      dap-pscm:
+        version: 2.7.1
+
+      dap-psmd:
+        version: 2.7.0
+
+      dap-psmp:
+        version: 2.7.0
+
+      dap-rcsm:
+        version: 1.4.4
+
+      dap-rddm:
+        version: 2.7.0
+
+      dap-rml:
+        version: 2.7.0
+
+      dap-rmr:
+        version: 2.7.0
+
+      dap-rpdm:
+        version: 2.7.0
+
+      dap-rsrl:
+        version: 4.9.12
+
+      dap-rsrr:
+        version: 4.9.12
+
+      dap-shfl:
+        version: 1.5.5
+
+      dap-shfr:
+        version: 1.5.5
+
+      dap-shrl:
+        version: 1.5.4
+
+      dap-shrr:
+        version: 1.6.3
+
+      dap-swm:
+        version: 2.7.0
+
+      dap-swsl:
+        version: 1.5.2
+
+      dap-swsr:
+        version: 1.5.2
+
+      dap-trm:
+        version: 2.7.0
+
+      dap-tvrl:
+        version: 2.1.18
+
+      dap-tvrr:
+        version: 2.1.18
+
+      dap-wpc:
+        version: 1.6.1
+
+      device-admin-service-impl:
+        version: 2.17.17
+
+      device-proxy-plugin:
+        version: 1.3.3
+
+      device-state-freshness-accessor:
+        version: 1.0.10
+
+      dfp-aud:
+        version: 1.0.32
+
+      dfp-bcma:
+        version: 1.3.7
+
+      dfp-bms:
+        version: 1.0.3
+
+      dfp-bpd:
+        version: 1.1.8
+
+      dfp-ccmb1:
+        version: 0.44.7
+
+      dfp-crsm:
+        version: 1.0.11
+
+      dfp-fioc-common-signals:
+        version: 2.2.0
+
+      dfp-fioc-thermal:
+        version: 0.1.15+vcustandby.3
+
+      dfp-flr:
+        version: 4.9.16
+
+      dfp-hib-adas:
+        version: 6.0.2
+
+      dfp-hib-adas-qm:
+        version: 6.0.0
+
+      dfp-hib-lvc:
+        version: 2.1.8
+
+      dfp-hib-vmp:
+        version: 1.12.1
+
+      dfp-hlcm:
+        version: 1.1.9
+
+      dfp-hvbm:
+        version: 1.2.16
+
+      dfp-hvcc:
+        version: 1.12.6
+
+      dfp-ihxa:
+        version: 1.5.0
+
+      dfp-lcsp:
+        version: 0.0.4+opal
+
+      dfp-lpc-active-glass-roof:
+        version: 1.0.20
+
+      dfp-lpc-blis:
+        version: 1.0.5
+
+      dfp-lpc-common-signals:
+        version: 2.2.4
+
+      dfp-lpc-dla:
+        version: 0.9.10
+
+      dfp-lpc-early-settings:
+        version: 1.1.23
+
+      dfp-lpc-externalload:
+        version: 1.0.16
+
+      dfp-lpc-interior-light:
+        version: 1.2.2
+
+      dfp-lpc-interior-trim:
+        version: 1.0.30
+
+      dfp-lpc-internal-perception-provider:
+        version: 1.1.8
+
+      dfp-lpc-seats:
+        version: 0.0.5
+
+      dfp-lpc-sensor-cleaning:
+        version: 1.0.4
+
+      dfp-lpc-side-mirrors:
+        version: 1.0.13
+
+      dfp-lpc-ultrasonic-sensors:
+        version: 1.3.0
+
+      dfp-lpc-vmp:
+        version: 1.9.0
+
+      dfp-lpc-wiper:
+        version: 0.1.5
+
+      dfp-pak:
+        version: 1.1.1
+
+      dfp-ppd:
+        version: 1.1.8
+
+      dfp-pscm:
+        version: 1.1.0
+
+      dfp-psmx:
+        version: 1.0.15
+
+      dfp-rmx:
+        version: 1.0.8
+
+      dfp-swm:
+        version: 1.0.8+vcustandby.3
+
+      dfp-tvdc:
+        version: 1.3.4
+
+      dfp-xsrx:
+        version: 4.9.15
+
+      dhu-admin:
+        version: 3.0.15
+
+      diagnostic_wifi_controller:
+        version: 0.4.9
+
+      disc-cleaning-need-determination:
+        version: 2.4.2
+
+      dp-aqsm:
+        version: 0.44.7
+
+      dp-aswm:
+        version: 1.1.4
+
+      dp-bcma1:
+        version: 1.6.0+rebuild12454
+
+      dp-bcma2:
+        version: 1.6.0+rebuild12454
+
+      dp-bms:
+        version: 5.0.7
+
+      dp-bpd:
+        version: 5.2.1
+
+      dp-ccmb1:
+        version: 0.44.7
+
+      dp-crsm:
+        version: 1.2.0
+
+      dp-dhuh:
+        version: 1.3.4
+
+      dp-etcm-china:
+        version: 1.1.6
+
+      dp-fioc:
+        version: 10.16.0
+
+      dp-gccc:
+        version: 3.9.1
+
+      dp-ghca:
+        version: 1.2.2
+
+      dp-hia-rc:
+        version: 1.0.8
+
+      dp-hib-adas:
+        version: 6.0.0
+
+      dp-hib-das:
+        version: 3.1.0
+
+      dp-hib-lvc:
+        version: 3.0.11
+
+      dp-hib-vmc:
+        version: 1.3.0
+
+      dp-hlcm:
+        version: 1.4.0
+
+      dp-hod:
+        version: 1.3.3
+
+      dp-hvacsys:
+        version: 0.44.7
+
+      dp-hvbm:
+        version: 8.7.0
+
+      dp-ihfa:
+        version: 7.2.0+rebuild12454
+
+      dp-ihra:
+        version: 7.2.0+rebuild12454
+
+      dp-lpc:
+        version: 27.8.6
+
+      dp-lpc-eth:
+        version: 4.3.3
+
+      dp-msm:
+        version: 0.0.9
+
+      dp-pak:
+        version: 38.0.6
+
+      dp-ppd:
+        version: 6.2.1
+
+      dp-pscm:
+        version: 1.4.0+rebuild.3
+
+      dp-psmd:
+        version: 2.1.1
+
+      dp-psmp:
+        version: 2.1.2
+
+      dp-psmr:
+        version: 1.1.0
+
+      dp-rcsm:
+        version: 0.1.7
+
+      dp-refrsys:
+        version: 0.44.7
+
+      dp-rml:
+        version: 0.2.6
+
+      dp-rmr:
+        version: 0.2.6
+
+      dp-shl:
+        version: 1.0.4+rebuild12454
+
+      dp-shr:
+        version: 1.0.4+rebuild12454
+
+      dp-swm:
+        version: 1.1.4
+
+      dp-swsl:
+        version: 1.0.5
+
+      dp-swsr:
+        version: 1.0.6
+
+      dp-tca:
+        version: 1.1.25
+
+      dp-tvrl:
+        version: 6.1.1
+
+      dp-tvrr:
+        version: 6.1.1
+
+      dp-wpc:
+        version: 0.2.6
+
+      dpp-aqsm:
+        version: 0.44.7
+
+      dpp-aswm:
+        version: 1.1.2
+
+      dpp-bms:
+        version: 1.4.3
+
+      dpp-flr:
+        version: 4.9.11
+
+      dpp-fsrl:
+        version: 4.9.11
+
+      dpp-fsrr:
+        version: 4.9.11
+
+      dpp-hod:
+        version: 1.10.0
+
+      dpp-hvacsys:
+        version: 0.44.7
+
+      dpp-ihfa:
+        version: 2.0.21
+
+      dpp-ihra:
+        version: 2.0.23
+
+      dpp-msm:
+        version: 1.0.24
+
+      dpp-rcsm:
+        version: 1.1.5
+
+      dpp-refrsys:
+        version: 0.44.7
+
+      dpp-rsrl:
+        version: 4.9.11
+
+      dpp-rsrr:
+        version: 4.9.11
+
+      dpp-shl:
+        version: 2.0.4
+
+      dpp-shr:
+        version: 2.0.6
+
+      dpp-swsl:
+        version: 1.0.25
+
+      dpp-swsr:
+        version: 1.0.22
+
+      driver-presence-spa2-impl:
+        version: 0.6.14
+
+      e2ep-bms:
+        version: 1.1.0
+
+      e2ep-brake-safe:
+        version: 1.1.0
+
+      e2ep-crsm:
+        version: 2.1.10
+
+      e2ep-dhuh-safe:
+        version: 2.14.0
+
+      e2ep-hia-ist:
+        version: 1.0.4+opal
+
+      e2ep-hib-adas:
+        version: 6.0.1
+
+      e2ep-hib-lateral-control-arbitration:
+        version: 1.0.1
+
+      e2ep-hib-lvc:
+        version: 2.3.2
+
+      e2ep-hod:
+        version: 2.0.2
+
+      e2ep-hpb-adas-someip:
+        version: 1.0.15
+
+      e2ep-lpc-dla:
+        version: 2.0.10
+
+      e2ep-lpc-driver-seat-occupancy:
+        version: 1.0.4
+
+      e2ep-lpc-externalload:
+        version: 1.0.27
+
+      e2ep-psmx:
+        version: 3.1.3
+
+      e2ep-rlsm:
+        version: 0.3.1+vcustandby.3
+
+      e2ep-swm:
+        version: 1.1.3+vcustandby.3
+
+      e2ep-swsx:
+        version: 1.0.19+vcustandby.3
+
+      e2ep-wmm:
+        version: 0.2.2
+
+      electric-drive-control-impl-spa2:
+        version: 1.2.4
+
+      electrical-faults-coordinator-impl:
+        version: 0.5.0
+
+      electrical-levels-coordinator-impl:
+        version: 0.8.0
+
+      electrical-limits-coordinator:
+        version: 0.4.12
+
+      electrical-limits-coordinator-impl:
+        version: 1.4.5
+
+      electronic-toll-collection-manager-china:
+        version: 1.2.4
+
+      ep-hix-fault-propagator:
+        version: 1.1.1
+
+      ep-road-condition-manager-spa2:
+        version: 1.1.3
+
+      ergonomics-coordinator-impl-spa2:
+        version: 1.0.8
+
+      external-device-output-current-accessor:
+        version: 1.0.10
+
+      hal-accelerator-pedal:
+        version: 2.2.3
+
+      hal-active-glass-roof-control-impl-0:
+        version: 1.0.27
+
+      hal-adaptive-front-light-asil-impl-spa2:
+        version: 1.0.3
+
+      hal-adaptive-front-light-impl-spa2:
+        version: 1.0.2
+
+      hal-adjustable-steering-wheel:
+        version: 1.0.15
+
+      hal-adjustable-steering-wheel-control:
+        version: 2.1.0+rebuild.1
+
+      hal-alarm-control-impl-spa2:
+        version: 1.0.3
+
+      hal-alarm-monitor-impl-spa2:
+        version: 1.0.1
+
+      hal-alcohol-lock-unit-control-impl-spa2:
+        version: 1.3.1
+
+      hal-ambient-light-impl:
+        version: 0.2.8
+
+      hal-assistance-call-control-impl-spa2:
+        version: 1.0.17
+
+      hal-aud-admin:
+        version: 2.1.19
+
+      hal-back-power-distribution-control:
+        version: 1.2.7
+
+      hal-back-power-distribution-control-impl:
+        version: 1.2.19
+
+      hal-basic-illumination-control-impl-spa2:
+        version: 0.2.5+emptimplopal
+
+      hal-basic-illumination-safe-control-impl-spa2:
+        version: 0.2.4+gcovr
+
+      hal-blis-control-impl-spa2:
+        version: 1.0.3
+
+      hal-blis-impl-spa2:
+        version: 1.0.4
+
+      hal-brake-control:
+        version: 1.5.5
+
+      hal-brake-light-control:
+        version: 0.6.7
+
+      hal-brake-monitor-spa2:
+        version: 1.1.0
+
+      hal-brake-propulsive-control:
+        version: 0.5.8
+
+      hal-catc-control-spa2:
+        version: 0.44.7
+
+      hal-das-hi:
+        version: 2.0.1
+
+      hal-das-hi-impl:
+        version: 2.0.7
+
+      hal-dhu-admin-control:
+        version: 3.0.15
+
+      hal-digital-key-impl-spa2:
+        version: 1.1.1
+
+      hal-direction-indication-fault-safe-impl-spa2:
+        version: 1.0.7
+
+      hal-direction-indicator-control-impl-spa2:
+        version: 0.0.7
+
+      hal-direction-indicator-lever-impl:
+        version: 1.2.10
+
+      hal-electric-drive-propulsion-control:
+        version: 2.0.12
+
+      hal-electronic-toll-collection-china-control-impl-spa2:
+        version: 1.1.1
+
+      hal-exterior-light-fault-monitor-impl-spa2:
+        version: 1.0.7
+
+      hal-exterior-radar-control-impl:
+        version: 1.0.7
+
+      hal-externalload-control-impl-spa2:
+        version: 0.0.9
+
+      hal-externalload-monitor-impl-spa2:
+        version: 0.0.12
+
+      hal-externalload-safe-impl:
+        version: 0.0.30
+
+      hal-forward-looking-camera-heater-impl-0:
+        version: 1.0.4
+
+      hal-front-beam-lever-impl:
+        version: 1.0.7
+
+      hal-front-electric-drive-impl-spa2:
+        version: 1.2.0
+
+      hal-front-electric-drive-inverter-control:
+        version: 2.1.6
+
+      hal-front-wiper-safe-control-impl:
+        version: 1.0.3
+
+      hal-frontseat-control-impl:
+        version: 1.9.10
+
+      hal-frontseat-monitor-impl:
+        version: 3.0.1
+
+      hal-frontseat-safe-control-impl:
+        version: 3.0.0
+
+      hal-gear-shift-lever-impl:
+        version: 1.2.8
+
+      hal-hands-off-detection-impl-spa2:
+        version: 2.0.1+int.1
+
+      hal-hazard-warning-light-switch-impl-spa2:
+        version: 1.0.5
+
+      hal-heated-emblem-impl-spa2:
+        version: 1.0.0
+
+      hal-heating-steering-wheel-control-impl:
+        version: 1.0.8
+
+      hal-high-to-low-voltage-converter-control:
+        version: 0.4.7
+
+      hal-high-to-low-voltage-converter-impl-spa2:
+        version: 3.7.4
+
+      hal-high-voltage-charging-control-spa2:
+        version: 1.3.1
+
+      hal-homelink:
+        version: 0.1.5
+
+      hal-homelink-impl:
+        version: 0.1.11
+
+      hal-hvec-battery-obd-data-impl:
+        version: 1.0.4
+
+      hal-hvec-battery-safety-power-limits-impl:
+        version: 1.0.7
+
+      hal-hvec-battery-state-of-health-impl:
+        version: 1.0.8
+
+      hal-hvec-charg-estimations-impl:
+        version: 1.0.5
+
+      hal-hvec-contactor-control-impl:
+        version: 1.0.4
+
+      hal-hvec-contactor-status-impl:
+        version: 1.0.4
+
+      hal-hvec-dc-charging-control-impl:
+        version: 1.0.9
+
+      hal-hvec-electrical-properties-impl:
+        version: 1.0.7
+
+      hal-hvec-energy-estimations-impl:
+        version: 1.0.2
+
+      hal-hvec-isolation-control-impl:
+        version: 1.0.2
+
+      hal-hvec-power-estimations-impl:
+        version: 1.0.5
+
+      hal-hvec-remote-monitor-control-impl:
+        version: 1.0.2
+
+      hal-hvec-silent-charging-impl:
+        version: 1.0.2
+
+      hal-hvec-system-impl:
+        version: 1.1.14
+
+      hal-hvec-thermal-properties-impl:
+        version: 1.0.4
+
+      hal-ignition-power:
+        version: 1.1.4
+
+      hal-ignition-power-impl:
+        version: 1.0.17
+
+      hal-interior-light-control-impl-0:
+        version: 1.1.3
+
+      hal-locking-control-impl-spa2:
+        version: 1.0.13
+
+      hal-locking-monitor-impl-spa2:
+        version: 1.1.0
+
+      hal-locking-safe-control-impl:
+        version: 1.0.11
+
+      hal-locking-safe-monitor-impl:
+        version: 1.0.12
+
+      hal-longitudinal-vehicle-control:
+        version: 3.5.0
+
+      hal-longitudinal-vehicle-control-monitor:
+        version: 3.5.0
+
+      hal-longitudinal-vehicle-control-safe-impl-0:
+        version: 1.8.2
+
+      hal-low-voltage-battery-control:
+        version: 2.1.4
+
+      hal-media-switch-module-ambient-illumination-control-impl-0:
+        version: 1.1.15
+
+      hal-media-switch-monitor-impl:
+        version: 1.0.5
+
+      hal-mirror-defroster-control-impl-spa2:
+        version: 1.0.3
+
+      hal-occupant-presence-safe-spa2-impl:
+        version: 1.1.3
+
+      hal-occupant-presence-spa2-impl:
+        version: 1.0.3
+
+      hal-overhead-console-defroster-impl-0:
+        version: 1.0.15
+
+      hal-overhead-passenger-airbag-indication-impl-0:
+        version: 1.0.4
+
+      hal-overhead-seat-belt-indication-impl-0:
+        version: 1.0.6
+
+      hal-passenger-power-distribution-control:
+        version: 1.1.8
+
+      hal-passenger-power-distribution-control-impl:
+        version: 2.0.11
+
+      hal-power-steering-control-impl-spa2:
+        version: 2.0.2
+
+      hal-power-steering-impl-spa2:
+        version: 3.0.3
+
+      hal-rear-console-switch-control-impl-0:
+        version: 1.1.2
+
+      hal-rear-electric-drive-impl-spa2:
+        version: 1.2.0
+
+      hal-rear-electric-drive-inverter-control:
+        version: 2.4.0
+
+      hal-rear-window-defroster-impl-spa2:
+        version: 1.0.1
+
+      hal-rearseat-control-impl:
+        version: 2.1.16
+
+      hal-rearseat-monitor-impl:
+        version: 3.1.10
+
+      hal-rearseat-safe-control-impl:
+        version: 1.3.10
+
+      hal-resource-management-control:
+        version: 3.0.8
+
+      hal-resource-management-control-impl:
+        version: 2.1.3
+
+      hal-seat-climatisation-control-impl:
+        version: 3.1.23
+
+      hal-seat-climatisation-monitor-impl:
+        version: 2.3.1
+
+      hal-seatbelt-control-impl-0:
+        version: 1.0.12
+
+      hal-shutdown-manager-resource-controller-impl-spa2:
+        version: 1.0.4
+
+      hal-side-mirror-maneuvering-control-impl-spa2:
+        version: 1.0.0
+
+      hal-side-radar-product-function-impl:
+        version: 4.9.13
+
+      hal-smart-charging-control-spa2:
+        version: 2.4.1
+
+      hal-steering-wheel-switch-ad-illumination-impl:
+        version: 1.0.15
+
+      hal-steering-wheel-switches-impl:
+        version: 1.1.1
+
+      hal-suspension-position:
+        version: 0.3.1
+
+      hal-switch-display-illumination-control-impl-0:
+        version: 5.2.0
+
+      hal-torque-vectoring:
+        version: 4.1.7
+
+      hal-torque-vectoring-control:
+        version: 4.4.3
+
+      hal-torque-vectoring-propulsion-control:
+        version: 3.3.14
+
+      hal-tyre-pressure-control-spa2-impl:
+        version: 0.0.13
+
+      hal-ultrasonic-park-assist-control-impl-spa2:
+        version: 0.1.5
+
+      hal-ultrasonic-park-assist-impl-spa2:
+        version: 0.2.6
+
+      hal-ultrasonic-sensing-control-impl-spa2:
+        version: 0.1.3
+
+      hal-ultrasonic-sensing-impl-spa2:
+        version: 0.2.7
+
+      hal-user-manager-impl-spa2:
+        version: 1.0.4
+
+      hal-vcu-shutdown-impl-spa2:
+        version: 2.2.4
+
+      hal-vehicle-modes-spa2-impl:
+        version: 3.5.0
+
+      hal-vehicle-motion-state-control:
+        version: 1.2.0
+
+      hal-visibility-sensor-cleaning-control-impl-spa2:
+        version: 1.0.0
+
+      hal-windows-control:
+        version: 0.6.4
+
+      hal-windows-control-impl-spa2:
+        version: 1.0.11
+
+      hal-windows-monitor-impl-spa2:
+        version: 1.0.13
+
+      hal-wiper-lever-impl:
+        version: 1.2.6
+
+      hal-wiper-washer-control-impl-spa2:
+        version: 1.1.0
+
+      hal-wiper-washer-monitor-impl-spa2:
+        version: 1.0.4
+
+      hal-wired-devices-charging-control-impl:
+        version: 1.2.10
+
+      hal-wireless-phone-charger-control-impl:
+        version: 1.12.5
+
+      hal-wireless-phone-charger-impl:
+        version: 1.15.4
+
+      heated-emblem:
+        version: 1.2.1
+
+      high-voltage-energy-coordinator-impl:
+        version: 1.11.18
+
+      homelink-manager:
+        version: 0.1.10
+
+      homelink-manager-impl:
+        version: 0.1.13
+
+      ist-failure-monitor:
+        version: 2.0.4+opal
+
+      longitudinal-vehicle-control-observer-impl-0:
+        version: 2.13.7
+
+      low-voltage-energy-control-impl:
+        version: 1.13.2
+
+      low-voltage-energy-coordinator-impl:
+        version: 1.44.2
+
+      pdbox-power-coordinator:
+        version: 1.4.9
+
+      pvc:
+        version: 5.35.0+calibration.25w27d5
+
+      resource-controller-spa2:
+        version: 1.24.1
+
+      resource_management:
+        version: 1.21.3
+
+      seat-manager-impl-spa2:
+        version: 1.1.3
+
+      seat-manager-safe:
+        version: 1.4.22
+
+      start-manager-spa2-impl:
+        version: 4.5.1
+
+      statistical-data-aggregator:
+        version: 1.10.1
+
+      suspension-data-forwarder:
+        version: 0.0.43
+
+      suspension-spa2:
+        version: 1.0.8+pmr-fix
+
+      torque-vectoring-mode-manager:
+        version: 1.0.21
+
+      vehicle-energy-management-spa2:
+        version: 1.8.0
+
+      vehiclemotionstate-server:
+        version: 1.8.1
+
+      windows-service:
+        version: 1.1.20
+
+  # SPA2 AD only modules targeting hpa or hpb
+  #- como-variant: [0HBA-60T]
+  #  modules:
+
+  # SPA2 HPB only modules
+  - como-variant: [CSOQ-BXZ]
+    modules:
+      ad-adas-b:
+        version: &zenseact-version 6.16.17+dos60941rc9
+
+      ad-adas-nominal-longitudinal-ab:
+        version: 1.0.2
+
+      climate-interface:
+        version: 1.0.7
+
+      cp-hic-vmc:
+        version: 1.0.4
+
+      cpu_stats_hpb:
+        version: 7.4.0
+
+      device-admin-service-impl-hpb:
+        version: 0.2.5
+
+      dfp-fll-hpb:
+        version: 1.1.9
+
+      dfp-hpa-adas-someip:
+        version: 1.0.15
+
+      diagnostic-comm-buses-monitor-hpb:
+        version: 4.3.4
+
+      diagnostic-monitors-hpb:
+        version: 1.1.1
+
+      dp-bcma2-hpb:
+        version: 1.0.0
+
+      dp-hib-adas-hpb:
+        version: 3.0.0
+
+      dp-hpa-positioning:
+        version: 2.3.0
+
+      dp-hpa-vmp:
+        version: 1.1.0
+
+      dp-hpb-hib-tsync:
+        version: 1.0.3
+
+      dp-hpb-hic-tsync:
+        version: 1.0.3
+
+      dp-hpb-hpa-tsync:
+        version: 1.0.2
+
+      dp-lpc-hpb:
+        version: 0.1.3
+
+      e2ep-bcma-hpb:
+        version: 1.0.6
+
+      e2ep-hib-adas-hpb:
+        version: 3.0.1
+
+      e2ep-hic-vmc:
+        version: 1.0.1
+
+      e2ep-hpa-adas-someip:
+        version: 1.3.4
+
+      e2ep-hpa-positioning:
+        version: 2.3.1
+
+      hal-ambient-light-impl-hpb:
+        version: 1.0.2
+
+      hal-front-looking-lidar:
+        version: 1.2.10
+
+      hal-lidar-thermal-control:
+        version: 1.2.11
+
+      lidar-server:
+        version: *zenseact-version
+
+      lidar-server-interface:
+        version: 1.1.6
+
+      lidar-thermal-control:
+        version: *zenseact-version
+
+      vehicle-modes-services-hpb-impl:
+        version: 1.2.0
+
+      vehicle-motion-state-redundant-interface:
+        version: 1.0.1
+
+  # SPA2 only modules that depend on AD capability and/or the AD-capable compatible topologies.
+  - como-variant: [C5X1-0AW, TSUS-5J6, FGU5-312, 0HBA-60T]
+    modules:
+      dap-adpm:
+        version: 1.0.8
+
+      dap-bmsa:
+        version: 1.2.9
+
+      dap-srs-b:
+        version: 2.7.0
+
+      dfp-bmsa:
+        version: 1.0.3
+
+      dfp-bmsa-hia-mee:
+        version: 1.0.7
+
+      dfp-fll:
+        version: 1.5.4
+
+      dfp-hpb-adas-someip:
+        version: 1.3.4
+
+      dfp-hpb-vmp:
+        version: 1.1.0
+
+      dfp-srs-b:
+        version: 2.6.2
+
+      dfp-srs-b-bcma-imu:
+        version: 1.0.9
+
+      dp-bmsa:
+        version: 2.0.2
+
+      dp-hia-mee:
+        version: 1.1.7
+
+      dp-hpa-hib-tsync:
+        version: 1.0.5
+
+      dp-hpa-hic-tsync:
+        version: 1.0.4
+
+      dp-hpa-hpb-tsync:
+        version: 1.0.3
+
+      dp-hpb-positioning:
+        version: 2.2.0
+
+      dp-hpb-vmp:
+        version: 1.0.3
+
+      dp-srs-b:
+        version: 3.0.4+rebuild12454
+
+      dp-srs-redundant-b:
+        version: 3.1.5
+
+      dpp-bmsa:
+        version: 1.3.2
+
+      dpp-srs-redundant-ad:
+        version: 1.2.6
+
+      e2ep-bmsa:
+        version: 1.1.0
+
+      e2ep-srs-b:
+        version: 4.3.4
+
+      e2ep-srs-service-b:
+        version: 2.0.6
+
+      hal-low-voltage-battery-control-impl-1:
+        version: 1.3.8
+
+      hal-low-voltage-battery-monitor-impl-1:
+        version: 0.5.0
+
+      hal-odometer-backup-impl-b:
+        version: 1.6.4
+
+      hal-passenger-airbag-status-control-impl-b:
+        version: 2.0.4+rebuild12454
+
+      hal-positioning:
+        version: 4.2.0
+
+      hal-positioning-dataforwarder:
+        version: 4.3.0
+
+      hal-positioning-forward-control:
+        version: 2.2.0
+
+      hal-positioning-forward-control-impl:
+        version: 2.4.0
+
+      hal-positioning-impl:
+        version: 3.4.0
+
+      hal-srs-control-impl-b:
+        version: 3.3.1
+
+      hal-srs-message-control-impl-b:
+        version: 2.0.6+limon
+
+      hal-srs-monitor-impl-b:
+        version: 3.2.4
+
+      hal-suspension-position-v536-impl:
+        version: 0.0.11
+
+      hpgnss-someip:
+        version: 3.3.0
+
+      positioning-impl:
+        version: 4.5.3
+
+      srs-odometer-backup-b:
+        version: 1.4.3+rebuild12454
+
+  # SPA2 only modules that depend on ADAS and/or the ADAS compatible topologies.
+  - como-variant: [C5X1-0AW, TSUS-5J6, FGU5-312, 0HBA-A7Z]
+    modules:
+      dap-srs-a:
+        version: 2.7.0
+
+      dfp-srs-a:
+        version: 2.4.9
+
+      dfp-srs-a-bcma-imu:
+        version: 1.0.9
+
+      dp-srs-a:
+        version: 2.0.4+rebuild12454
+
+      dp-srs-redundant-a:
+        version: 3.0.3+rebuild12454
+
+      e2ep-srs-a:
+        version: 4.3.4
+
+      e2ep-srs-service-a:
+        version: 2.0.6
+
+      hal-low-voltage-battery-control-impl-0:
+        version: 1.2.9
+
+      hal-low-voltage-battery-monitor-impl-0:
+        version: 1.4.0
+
+      hal-odometer-backup-impl-a:
+        version: 1.6.4
+
+      hal-passenger-airbag-status-control-impl-a:
+        version: 2.0.4+rebuild12454
+
+      hal-srs-control-impl-a:
+        version: 3.2.9
+
+      hal-srs-message-control-impl-a:
+        version: 2.0.6+limon
+
+      hal-srs-monitor-impl-a:
+        version: 3.2.4
+
+      hal-suspension-position-p519-impl:
+        version: 0.0.11
+
+      srs-odometer-backup-a:
+        version: 1.4.3+rebuild12454
+
+  # Generic modules, applicable for all VCUv2/Orin-based products
+  # independent on vehicle platforms (SPA2/SPA3) and topologies.
+  - como-variant: [C5X1-0AW, TSUS-5J6]
+    modules:
+      active-glass-roof:
+        version: 1.0.47
+
+      ad-adas-a:
+        version: *zenseact-version
+
+      ad-adas-brake-a:
+        version: 1.0.2
+
+      ad-adas-emergency-lateral-a:
+        version: 1.0.0
+
+      ad-adas-fisheye-vision-service-interface:
+        version: 2.3.12
+
+      ad-adas-flcw-vision-service-interface:
+        version: 0.5.13
+
+      ad-adas-nominal-lateral-a:
+        version: 1.0.0
+
+      ad-adas-safe-longitudinal-a:
+        version: 1.0.2
+
+      ad-adas-threat-validation-a:
+        version: 1.0.2
+
+      adaptive-front-light:
+        version: 1.7.103
+
+      adaptive-front-light-asil:
+        version: 3.0.7
+
+      adas-actuation-arbitration-status-interface:
+        version: 1.7.6
+
+      adas-cleaning-manager:
+        version: *zenseact-version
+
+      adas-domain-controller:
+        version: *zenseact-version
+
+      adas-domain-controller-interface:
+        version: 4.8.0
+
+      adas-driver-inputs-interface:
+        version: 3.11.0
+
+      adas-driver-state-interface:
+        version: 3.3.28
+
+      adas-function-availability-interface:
+        version: 1.0.4
+
+      adas-functions-arbitration-external-interface:
+        version: 1.0.9
+
+      adas-functions-status-interface:
+        version: 2.12.0
+
+      adas-information-manager:
+        version: *zenseact-version
+
+      adas-information-manager-interface:
+        version: 2.29.0
+
+      adas-manager-external-interface-safe:
+        version: 1.0.6
+
+      adas-sensor-mode-manager:
+        version: *zenseact-version
+
+      alarm-service:
+        version: 0.4.50
+
+      alcohol-interlock-manager:
+        version: 1.8.5
+
+      alcohol-interlock-manager-impl:
+        version: 1.9.4
+
+      assistance-call:
+        version: 1.42.19
+
+      authorized-device-presence-check:
+        version: 1.4.8
+
+      basic-illumination-control:
+        version: 3.35.5
+
+      basic-illumination-control-safe:
+        version: 3.16.6+gcovr
+
+      battery-properties:
+        version: 2.0.14
+
+      battery-thermal-service:
+        version: 0.44.7
+
+      body-pitch-angle:
+        version: 0.1.13
+
+      brake-control:
+        version: 1.5.0
+
+      brake-view-logic:
+        version: 3.16.9
+
+      cabin-air-quality:
+        version: 0.44.7
+
+      carconfig:
+        version: 1.5.5
+
+      carconfig-connector:
+        version: 1.12.3
+
+      catc:
+        version: 0.44.16
+
+      catc-server:
+        version: 0.44.15
+
+      certificate-provisioning-crypto:
+        version: 1.4.4
+
+      climate-and-thermal-control-service:
+        version: 0.44.7
+
+      cloud-feature-discovery:
+        version: 3.1.0
+
+      cloud-map-receiver-interface:
+        version: 2.2.6
+
+      cloud-map-receiver-service:
+        version: *zenseact-version
+
+      comm-sum:
+        version: 0.8.31
+
+      connected-safety-transceiver:
+        version: *zenseact-version
+
+      cpu_stats_app:
+        version: 7.4.0
+
+      dap-fll:
+        version: 1.0.1
+
+      data-collection-file-manager:
+        version: 1.0.5
+
+      device-admin-plugin:
+        version: 2.4.5
+
+      dfp-dhu-unconfig:
+        version: 2.12.0
+
+      dhu-fault-proxy:
+        version: 2.0.0
+
+      diagnostic-comm-buses-monitor:
+        version: 4.3.4
+
+      diagnostic-data-provider:
+        version: 0.11.0
+
+      diagnostic-monitors:
+        version: 1.1.1
+
+      diagnostic_wake_up_agent:
+        version: 1.2.14
+
+      diagnostic_watchdog_monitor:
+        version: 1.4.13
+
+      digital-key:
+        version: 0.3.53
+
+      digital-key-impl:
+        version: 1.2.3
+
+      direction-indication-fault-monitor-safe:
+        version: 1.0.31
+
+      direction-indicator-control:
+        version: 5.5.5
+
+      direction-indicator-control-safe:
+        version: 5.1.4
+
+      dp-exposed1lin:
+        version: 1.0.9
+
+      driver-coach-adapter:
+        version: 1.4.11
+
+      driver-information-view-logic-runner:
+        version: 1.19.4
+
+      driver-initiated-hpa-reset:
+        version: 1.9.6
+
+      driver-input-controller:
+        version: 3.13.1
+
+      driver-monitoring-system:
+        version: 2.1.2
+
+      driver-monitoring-system-interface:
+        version: 3.0.21+opal
+
+      driver-presence:
+        version: 0.6.10
+
+      driver-support-functions-controller:
+        version: 2.47.0
+
+      driverinformation-asil-adapter:
+        version: 1.50.2
+
+      electric-drive-control:
+        version: 3.16.1
+
+      electrical-faults-coordinator:
+        version: 0.3.5
+
+      electrical-levels-coordinator:
+        version: 0.5.3
+
+      electrical-limits-seats:
+        version: 1.0.4
+
+      electrical-limits-thermal:
+        version: 2.0.4
+
+      electrical-limits-visibility:
+        version: 1.0.3
+
+      ergonomics-coordinator:
+        version: 3.0.16
+
+      estimated-power-consumption:
+        version: 1.0.2
+
+      extended-hmi:
+        version: 1.0.2
+
+      exterior-light-fault-monitor:
+        version: 1.1.20
+
+      exterior-light-view:
+        version: 4.21.4
+
+      external-load-service:
+        version: 0.4.40
+
+      fisheye-camera-server-interface:
+        version: 1.1.3
+
+      flcw-camera-server-interface:
+        version: 1.1.3
+
+      forward-looking-lidar-interface:
+        version: 1.0.14
+
+      front-beam-controller:
+        version: 2.14.11
+
+      front-wiper-safe:
+        version: 0.4.1
+
+      global-snapshot-resolver:
+        version: 0.2.22
+
+      google-map-contribution-provider:
+        version: 1.0.5
+
+      hal-active-glass-roof-control:
+        version: 1.0.26
+
+      hal-adaptive-front-light:
+        version: 2.3.26
+
+      hal-adaptive-front-light-asil:
+        version: 2.2.58
+
+      hal-alarm-control:
+        version: 0.6.17
+
+      hal-alarm-monitor:
+        version: 0.7.15
+
+      hal-alcohol-lock-unit-control:
+        version: 1.2.26
+
+      hal-assistance-call-control:
+        version: 3.0.22
+
+      hal-basic-illumination-control:
+        version: 5.2.0+opal
+
+      hal-basic-illumination-safe-control:
+        version: 2.0.1+cid
+
+      hal-blis:
+        version: 1.0.2
+
+      hal-blis-control:
+        version: 1.0.2
+
+      hal-brake-monitor:
+        version: 1.25.6
+
+      hal-catc-control:
+        version: 0.44.7
+
+      hal-certificate-provisioning-crypto:
+        version: 1.0.0
+
+      hal-certificate-provisioning-crypto-impl:
+        version: 1.0.2
+
+      hal-digital-key:
+        version: 1.2.1
+
+      hal-direction-indication-fault-safe:
+        version: 2.1.2
+
+      hal-direction-indicator-control:
+        version: 4.1.27
+
+      hal-direction-indicator-lever:
+        version: 2.2.7
+
+      hal-electronic-toll-collection-china-control:
+        version: 1.0.14
+
+      hal-exterior-light-fault-monitor:
+        version: 3.0.7
+
+      hal-exterior-radar-control:
+        version: 1.1.4
+
+      hal-externalload-control:
+        version: 0.6.4
+
+      hal-externalload-monitor:
+        version: 0.5.3
+
+      hal-externalload-safe:
+        version: 0.0.24
+
+      hal-forward-looking-camera-heater:
+        version: 1.0.24
+
+      hal-front-beam-lever:
+        version: 3.1.6
+
+      hal-front-electric-drive:
+        version: 3.8.2
+
+      hal-front-looking-lidar-control:
+        version: 1.4.2
+
+      hal-front-wiper-safe-control:
+        version: 1.0.1
+
+      hal-frontseat-control:
+        version: 1.10.6
+
+      hal-frontseat-monitor:
+        version: 3.0.1
+
+      hal-frontseat-safe-control:
+        version: 3.0.0
+
+      hal-gear-shift-lever:
+        version: 2.2.7
+
+      hal-hands-off-detection:
+        version: 4.0.1+int.1
+
+      hal-hazard-warning-light-switch:
+        version: 3.0.3
+
+      hal-heated-emblem:
+        version: 1.5.4
+
+      hal-heating-steering-wheel-control:
+        version: 1.18.9
+
+      hal-high-to-low-voltage-converter:
+        version: 3.7.4
+
+      hal-high-voltage-charging-control:
+        version: 5.21.0
+
+      hal-hvec-battery-obd-data:
+        version: 1.0.2
+
+      hal-hvec-battery-safety-power-limits:
+        version: 0.5.25
+
+      hal-hvec-battery-state-of-health:
+        version: 3.0.0
+
+      hal-hvec-charg-estimations:
+        version: 3.3.1
+
+      hal-hvec-contactor-control:
+        version: 0.6.1
+
+      hal-hvec-contactor-status:
+        version: 0.6.1
+
+      hal-hvec-dc-charging-control:
+        version: 1.2.2
+
+      hal-hvec-electrical-properties:
+        version: 0.6.3
+
+      hal-hvec-energy-estimations:
+        version: 2.9.1
+
+      hal-hvec-isolation-control:
+        version: 0.6.1
+
+      hal-hvec-power-estimations:
+        version: 0.6.2
+
+      hal-hvec-remote-monitor-control:
+        version: 0.5.1
+
+      hal-hvec-silent-charging:
+        version: 1.1.0
+
+      hal-hvec-system:
+        version: 0.8.5
+
+      hal-hvec-thermal-properties:
+        version: 2.11.0
+
+      hal-hvec-thermal-properties-control:
+        version: 1.3.1
+
+      hal-interior-light-control:
+        version: 1.4.4
+
+      hal-local-time:
+        version: 2.0.25
+
+      hal-locking-control:
+        version: 1.0.5
+
+      hal-locking-monitor:
+        version: 2.10.0
+
+      hal-locking-safe-control:
+        version: 1.0.11
+
+      hal-locking-safe-monitor:
+        version: 1.0.12
+
+      hal-longitudinal-vehicle-control-safe:
+        version: 1.9.0
+
+      hal-low-voltage-battery-monitor:
+        version: 4.4.0
+
+      hal-media-switch-module-ambient-illumination-control:
+        version: 3.1.3
+
+      hal-media-switch-monitor:
+        version: 2.4.9
+
+      hal-mirror-defroster-control:
+        version: 2.0.2
+
+      hal-navigation-route:
+        version: 1.0.14
+
+      hal-occupant-presence:
+        version: 4.2.2
+
+      hal-occupant-presence-safe:
+        version: 1.4.2
+
+      hal-odometer-backup:
+        version: 1.4.0
+
+      hal-overhead-console-defroster:
+        version: 2.0.19
+
+      hal-overhead-passenger-airbag-indication:
+        version: 2.0.14
+
+      hal-overhead-seat-belt-indication:
+        version: 2.0.9
+
+      hal-passenger-airbag-status-control:
+        version: 1.4.2
+
+      hal-power-steering:
+        version: 1.5.0
+
+      hal-power-steering-control:
+        version: 5.0.0+rebuild
+
+      hal-rear-console-switch-control:
+        version: 1.4.7
+
+      hal-rear-electric-drive:
+        version: 3.9.2
+
+      hal-rear-window-defroster:
+        version: 1.3.5
+
+      hal-rearseat-control:
+        version: 2.1.2
+
+      hal-rearseat-monitor:
+        version: 2.4.1
+
+      hal-rearseat-safe-control:
+        version: 1.3.3
+
+      hal-remote-monitor-system-control:
+        version: 1.0.8
+
+      hal-seat-climatisation-control:
+        version: 3.0.5
+
+      hal-seat-climatisation-monitor:
+        version: 2.2.0
+
+      hal-seatbelt-control:
+        version: 0.3.6
+
+      hal-shutdown-manager-resource-controller:
+        version: 1.0.3
+
+      hal-side-mirror-maneuvering-control:
+        version: 1.5.2
+
+      hal-side-radar-product-function:
+        version: 2.2.1
+
+      hal-smart-charging-control:
+        version: 2.4.0
+
+      hal-srs-control:
+        version: 4.1.2
+
+      hal-srs-message-control:
+        version: 1.3.3
+
+      hal-srs-monitor:
+        version: 3.14.0
+
+      hal-srs-odometer-backup-control:
+        version: 1.0.3
+
+      hal-steering-wheel-switch-ad-illumination:
+        version: 1.2.21
+
+      hal-steering-wheel-switches:
+        version: 1.2.5
+
+      hal-switch-display-illumination-control:
+        version: 8.0.0
+
+      hal-tyre-pressure-control:
+        version: 1.0.4
+
+      hal-ultrasonic-park-assist:
+        version: 5.8.4
+
+      hal-ultrasonic-park-assist-control:
+        version: 6.4.3
+
+      hal-ultrasonic-sensing:
+        version: 7.12.4
+
+      hal-ultrasonic-sensing-control:
+        version: 5.1.4
+
+      hal-user-manager:
+        version: 1.1.9
+
+      hal-vcu-shutdown:
+        version: 2.1.2
+
+      hal-vehicle-modes:
+        version: 2.12.0
+
+      hal-visibility-sensor-cleaning-control:
+        version: 0.6.4
+
+      hal-windows-monitor:
+        version: 0.7.0
+
+      hal-wiper-lever:
+        version: 2.2.9
+
+      hal-wiper-washer-control:
+        version: 0.4.0
+
+      hal-wiper-washer-monitor:
+        version: 0.6.16
+
+      hal-wired-devices-charging-control:
+        version: 1.3.0
+
+      hal-wireless-phone-charger:
+        version: 1.15.1
+
+      hal-wireless-phone-charger-control:
+        version: 1.13.2
+
+      hands-off-detection:
+        version: 0.4.0+int.1
+
+      head-up-display-settings:
+        version: 1.9.11
+
+      hib-lvc-safety-interface:
+        version: 2.0.6
+
+      high-voltage-charging:
+        version: 4.22.11
+
+      high-voltage-charging-coordinator:
+        version: 4.10.16
+
+      high-voltage-energy-coordinator:
+        version: 1.10.0
+
+      high-voltage-system-control:
+        version: 0.5.16
+
+      hpb-adas-status-interface:
+        version: 1.0.4
+
+      human-vision-manager:
+        version: 1.6.3
+
+      immobilizer-manager:
+        version: 4.6.6
+
+      indication-manager:
+        version: 6.12.4
+
+      infotainment_climate_adapter:
+        version: 1.3.0-alpha.267730.23
+
+      installation-master:
+        version: 4.12.2
+
+      interior-light:
+        version: 1.5.3
+
+      keep-awake:
+        version: 0.17.0
+
+      lateral-control-arbitration-interface:
+        version: 1.0.1
+
+      lifecycle-modes-manager:
+        version: 1.15.3
+
+      lifecycle-modes-manager-safe:
+        version: 1.6.2
+
+      locking-service:
+        version: 0.11.105
+
+      locking-service-impl:
+        version: 0.11.105
+
+      locking-service-safe:
+        version: 2.0.18
+
+      longitudinal-vehicle-control:
+        version: 0.10.1
+
+      longitudinal-vehicle-control-internal:
+        version: 2.10.2
+
+      longitudinal-vehicle-control-observer:
+        version: 2.11.2
+
+      low-voltage-charging-monitor:
+        version: 1.0.1
+
+      low-voltage-energy-control:
+        version: 1.3.2
+
+      low-voltage-energy-coordinator:
+        version: 1.9.0
+
+      low-voltage-system-monitor:
+        version: 1.0.0
+
+      lpa-dtc-adapter:
+        version: 1.16.1
+
+      main-climate:
+        version: 0.44.7
+
+      map-compiler-someip-serializer-lib:
+        version: 0.2.7
+
+      map-energy-adapter:
+        version: 0.1.22
+
+      measurement-unit-settings:
+        version: 1.6.3
+
+      media-switch-adapter:
+        version: 1.4.6
+
+      mounted-ecu-list:
+        version: 1.2.21
+
+      movement-authorization-manager:
+        version: 2.6.3
+
+      notification-manager:
+        version: 4.19.3
+
+      obd-interface:
+        version: 1.2.1
+
+      occupant-forgotten-assessment:
+        version: 3.8.5
+
+      odometer:
+        version: 2.26.1
+
+      one-engine:
+        version: 11.6.0+kiwi
+
+      one-pilot-planned-trajectory:
+        version: 1.0.3
+
+      ota-manager:
+        version: 2.7.5
+
+      ota-manager-connector:
+        version: 2.1.2
+
+      overhead-console-defroster:
+        version: 1.0.37
+
+      parking-climate:
+        version: 0.44.7
+
+      pril-observer:
+        version: 1.0.6+rebuild.5
+
+      probe-source-maps-transceiver-interface:
+        version: 1.7.2
+
+      probe-source-maps-transceiver-service:
+        version: *zenseact-version
+
+      rear-climate-view-controller-view-logic:
+        version: 2.6.6+rebuild
+
+      rear-vision-defroster:
+        version: 0.13.2
+
+      relay-admin:
+        version: 1.1.0
+
+      remote-monitor-system-gateway-china:
+        version: 1.0.8
+
+      remote-park-assist-pilot-interface:
+        version: 1.0.16
+
+      request-vehicle-modes:
+        version: 1.3.0
+
+      reset-infotainment:
+        version: 2.0.2
+
+      restart-time-suggester:
+        version: 2.0.3
+
+      ride-pilot-interface:
+        version: 1.1.3
+
+      road-state-internal-interface:
+        version: 1.0.11
+
+      roadstate-service:
+        version: 0.4.14
+
+      seat-belt-reminder:
+        version: 4.24.4
+
+      seat-manager:
+        version: 2.5.0
+
+      seatbelt-control:
+        version: 0.8.5
+
+      service-adjustable-steering-wheel:
+        version: 0.18.0
+
+      service-power-steering:
+        version: 4.8.3
+
+      service-reminder:
+        version: 1.5.2
+
+      settings-service:
+        version: 0.3.13
+
+      sga-communication-service:
+        version: 2.3.0
+
+      shutdown-manager:
+        version: 3.13.6
+
+      side-mirror-maneuvering-control:
+        version: 1.8.2
+
+      smart-charging:
+        version: 2.0.1
+
+      software-execution-monitor:
+        version: 1.0.7
+
+      sound-notification-requester:
+        version: 7.3.1
+
+      srs-crashcontrolmaster:
+        version: 1.19.1
+
+      srs-crashcontrolmaster-impl:
+        version: 1.2.5
+
+      standard-precision-positioning:
+        version: 1.1.9
+
+      start_manager:
+        version: 2.58.0
+
+      statistical-data-manager:
+        version: 4.3.0
+
+      supplemental-safety-view-logic:
+        version: 2.30.6
+
+      surface-temperature-manager:
+        version: 1.7.12
+
+      switch-display-illumination:
+        version: 1.5.5
+
+      telematics-application-adapter:
+        version: 2.2.2
+
+      telematics-framework:
+        version: 6.0.2
+
+      telematics-framework-ccmlib:
+        version: 1.0.19
+
+      telematics-framework-common:
+        version: 1.0.16
+
+      telematics-framework-curl:
+        version: 1.6.0
+
+      telematics-framework-marben-runtime:
+        version: 1.0.9
+
+      telematics-framework-signaling-gateway:
+        version: 2.0.23
+
+      telematics-framework-test-service:
+        version: 0.2.9
+        enabled: false
+
+      telematics-framework-usermanagerlib:
+        version: 1.0.24
+
+      telematics-framework-xmllib2:
+        version: 2.1.3
+
+      telematics-framework-xmlsec:
+        version: 1.2.15
+
+      thermal-control:
+        version: 0.44.10
+
+      tyre-and-wheel-monitor:
+        version: 1.0.4
+
+      uds_firewall:
+        version: 1.3.4
+
+      usage-modes-manager:
+        version: 1.29.3
+
+      user-manager:
+        version: 1.3.21
+
+      utc-broker:
+        version: 0.11.1
+
+      vcu-shutdown-intent:
+        version: 1.1.5
+
+      vehicle-charging-input-adapter:
+        version: 3.0.1
+
+      vehicle-crash-data:
+        version: 1.1.0
+
+      vehicle-data-view-adapter:
+        version: 4.18.6
+
+      vehicle-energy-management:
+        version: 2.20.0
+
+      vehicle-energy-view-logic:
+        version: 6.17.13
+
+      vehicle-identification-info:
+        version: 1.0.20
+
+      vehicle-language-controller:
+        version: 1.9.6
+
+      vehicle-location-transmitter:
+        version: *zenseact-version
+
+      vehicle-modes-control:
+        version: 1.2.0
+
+      vehicle-modes-provider-safe:
+        version: 1.0.5
+
+      vehicle-settings-input-adapter:
+        version: 2.1.53
+
+      vehicle-speed-certified:
+        version: 2.8.2
+
+      vehicle-speed-view-logic:
+        version: 2.8.8
+
+      vehicle-status-adapter:
+        version: 2.1.15
+
+      vehicle_modes_provider:
+        version: 7.38.0
+
+      vehiclemotionstate-service:
+        version: 3.10.26
+
+      visibility-sensor-cleaning:
+        version: 0.11.14
+
+      wakeup-time-manager:
+        version: 0.9.5
+
+      wheel-rotation-adapter:
+        version: 1.0.13
+
+      wiper-washer-controller:
+        version: 2.16.0
+
+      wiper-washer-service:
+        version: 0.8.19
+
+      wiper-washer-view-logic:
+        version: 2.10.8
+
+      wired-devices-charging:
+        version: 1.22.4
+
+      wireless-phone-charger:
+        version: 1.33.10
+
+      world-model-ab-interface:
+        version: 1.0.1
+
+      world-model-interface:
+        version: 2.6.0
+
+      zen-adaptive-high-beam-control:
+        version: 1.2.0
+
+      zen-nominal-trajectory-planning-interface:
+        version: 1.1.2
+
+      zen-plan-a-external-interface:
+        version: 2.0.8
+
+      zen-plan-a-safe-external-interface:
+        version: 2.0.6
+
+      zone-information:
+        version: 1.0.5
+
+  # ADAS/AD shared enablers, independent on HPA or HPB and independent on vehicle platform (SPA2/SPA3).
+  # NOTE: Only to be used for shared enablers that are to be included in all HPA products as well as all
+  # HPB products - and on all vehicle platforms (SPA2/SPA3).
+  - como-variant: [0HBA-A7Z, 0HBA-60T]
+    modules:
+      adas-configuration-interface:
+        version: 7.8.0
+
+      adas-read-config-parameter:
+        version: 1.2.9
+
+      brake-safe:
+        version: 1.1.1
+
+      component-factory:
+        version: 0.5.2
+
+      data-collection-framework:
+        version: &dcf-version 4.11.6
+
+      data-collection-framework-core:
+        version: *dcf-version
+
+      data-forwarder-plugin:
+        version: 0.6.1
+
+      data-forwarder-runner:
+        version: 0.9.13+rebuild
+
+      device-activator:
+        version: 2.8.15
+
+      device-admin-service:
+        version: 2.15.5
+
+      diagnostic-kernel:
+        version: 3.14.13
+
+      diagnostic-kernel-config:
+        version: 1.8.7+rebuild.1
+
+      diagnostic-memory-monitor:
+        version: 4.2.0
+
+      diagnostic-performance-monitor:
+        version: 1.4.0
+
+      diagnostic-sensors-monitor:
+        version: 4.3.0
+
+      executable-plugin:
+        version: 0.5.1
+
+      exterior-radar-device-status-interface:
+        version: 1.4.1
+
+      fault-manager:
+        version: 1.12.5
+
+      fault-manager-safe:
+        version: 1.1.5
+
+      fixed-pool-metrics-resource:
+        version: 1.3.0
+
+      global-snapshot:
+        version: 3.0.53
+
+      hal-ambient-light:
+        version: 1.1.5
+
+      hal-brake-safe-monitor:
+        version: 0.7.0
+
+      hal-offloader:
+        version: 2.1.7+25w11-integration
+
+      hib-zen-interface:
+        version: 1.1.7
+
+      lidar-device-status-interface:
+        version: 1.1.0
+
+      positioning:
+        require-impl: false
+        version: 5.1.0
+
+      radar-server:
+        version: *zenseact-version
+
+      radar-service:
+        version: 1.3.6
+
+      task-runner:
+        version: 0.4.4
+
+      vehicle-modes-provider:
+        version: 1.2.0
+
+      xcp-slave:
+        version: 1.0.39
+
+  # Generic SPA3 modules (only).
+  - como-variant: [C5X1-0AW, TSUS-5J6, FGU5-MI9]
+    modules:
+      brake-control-impl-spa3:
+        version: 0.1.1
+
+      carconfig-adapter-spa3:
+        version: 1.1.9
+
+      cp-flr:
+        version: 5.0.1
+
+      cp-fsrl:
+        version: 5.0.1
+
+      cp-fsrr:
+        version: 5.0.1
+
+      cp-hia-spa3:
+        version: 2.0.0
+
+      cp-hib:
+        version: 1.0.0
+
+      cp-ohc:
+        version: 5.0.1
+
+      cp-rsrl:
+        version: 5.0.1
+
+      cp-rsrr:
+        version: 5.0.1
+
+      cp-zcla:
+        version: 5.2.0
+
+      cp-zcla-ha:
+        version: 5.2.0
+
+      cp-zcla-secoc:
+        version: 2.0.1
+
+      cp-zclb:
+        version: 5.2.0
+
+      cp-zclb-secoc:
+        version: 2.0.1
+
+      cp-zcra:
+        version: 5.1.0
+
+      cp-zcrb:
+        version: 5.2.0
+
+      dap-flr-spa3:
+        version: 1.4.0
+
+      dap-fsrl-spa3:
+        version: 1.4.0
+
+      dap-fsrr-spa3:
+        version: 1.4.0
+
+      dap-rsrl-spa3:
+        version: 1.4.0
+
+      dap-rsrr-spa3:
+        version: 1.4.0
+
+      device-admin-service-impl-spa3:
+        version: 1.8.0
+
+      dfp-bcmd:
+        version: 1.0.6
+
+      dfp-flr-spa3:
+        version: 0.10.0
+
+      dfp-global-snapshot:
+        version: 1.0.6
+
+      dfp-hia-vmp-spa3:
+        version: 2.1.0
+
+      dfp-hib:
+        version: 1.0.1
+
+      dfp-hib-qm:
+        version: 1.0.1
+
+      dfp-hib-vmp-spa3:
+        version: 2.1.0
+
+      dfp-hvbm-spa3:
+        version: 1.0.2
+
+      dfp-hvcc-spa3:
+        version: 1.3.1
+
+      dfp-rmx-spa3:
+        version: 1.0.2
+
+      dfp-srs-spa3:
+        version: 1.1.2
+
+      dfp-sum:
+        version: 0.1.2
+
+      dfp-xsrx-spa3:
+        version: 0.10.0
+
+      dfp-zc-utcb:
+        version: 1.0.0
+
+      dfp-zcla-lvc:
+        version: 1.0.1
+
+      dfp-zclb-traveling-information:
+        version: 1.0.0
+
+      dfp-zclb-ultrasonic-sensors:
+        version: 0.4.3
+
+      dfp-zclb-vmp:
+        version: 2.4.1
+
+      dfp-zcxb-early-settings:
+        version: 1.0.3
+
+      driver-presence-spa3-impl:
+        version: 0.6.15
+
+      e2ep-bcmd-bcme-zcl:
+        version: 0.6.0
+
+      e2ep-hib:
+        version: 1.0.0
+
+      e2ep-rlsm-spa3:
+        version: 1.0.2
+
+      e2ep-srs-spa3:
+        version: 1.1.0
+
+      e2ep-swm-spa3:
+        version: 1.0.3
+
+      e2ep-sws-spa3:
+        version: 1.0.9
+
+      e2ep-zcla-lvc:
+        version: 2.0.3
+
+      e2ep-zcla-sum:
+        version: 0.1.1
+
+      e2ep-zclaha-lateral-control-arbitration:
+        version: 1.0.1
+
+      e2ep-zclaha-vmc:
+        version: 1.5.0
+
+      e2ep-zclb-dla:
+        version: 2.0.1
+
+      e2ep-zclb-extended-hmi:
+        version: 1.0.2
+
+      e2ep-zclb-externalload-spa3:
+        version: 1.0.1
+
+      e2ep-zclb-reset-infotainment:
+        version: 1.0.0
+
+      electric-drive-control-impl-spa3:
+        version: 1.1.11+sdb13
+
+      electrical-faults-coordinator-impl-spa3:
+        version: 1.0.1
+
+      electrical-power-and-energy-coordinator-impl-gpa:
+        version: 0.10.1
+
+      ep-lost-com:
+        version: 1.0.1
+
+      ep-seat-manager-impl-spa3:
+        version: 1.0.2
+
+      ep-wpc:
+        version: 1.0.0
+
+      ergonomics-coordinator-impl-spa3:
+        version: 1.0.5
+
+      hal-active-glass-roof-control-impl-spa3:
+        version: 0.0.13
+
+      hal-adaptive-front-light-asil-impl-spa3:
+        version: 1.0.5
+
+      hal-adaptive-front-light-impl-spa3:
+        version: 1.0.4
+
+      hal-alarm-control-impl-spa3:
+        version: 1.0.7
+
+      hal-alarm-monitor-impl-spa3:
+        version: 1.0.8
+
+      hal-alcohol-lock-unit-control-impl-spa3:
+        version: 1.0.0
+
+      hal-ambient-light-impl-spa3:
+        version: 1.0.2
+
+      hal-assistance-call-control-impl-spa3:
+        version: 1.0.17+sbd
+
+      hal-basic-illumination-control-impl-spa3:
+        version: 0.2.5+emptimplopal
+
+      hal-basic-illumination-safe-control-impl-spa3:
+        version: 0.2.2+Sdb13Breaking
+
+      hal-blis-control-impl-spa3:
+        version: 1.0.2
+
+      hal-blis-impl-spa3:
+        version: 1.0.4
+
+      hal-brake-monitor-spa3:
+        version: 1.1.8
+
+      hal-catc-control-spa3:
+        version: 0.44.7
+
+      hal-das-zc:
+        version: 1.0.3
+
+      hal-das-zc-impl:
+        version: 1.2.11
+
+      hal-digital-key-impl-spa3:
+        version: 1.1.2
+
+      hal-direction-indication-fault-safe-impl-spa3:
+        version: 0.0.7
+
+      hal-direction-indicator-control-impl-spa3:
+        version: 0.0.7
+
+      hal-direction-indicator-lever-impl-spa3:
+        version: 1.0.10
+
+      hal-electronic-toll-collection-china-control-impl-spa3:
+        version: 1.0.4+rebuild
+
+      hal-exterior-light-fault-monitor-impl-spa3:
+        version: 0.0.12
+
+      hal-exterior-radar-control-impl-spa3:
+        version: 1.4.0
+
+      hal-externalload-control-impl-spa3:
+        version: 0.0.14
+
+      hal-externalload-monitor-impl-spa3:
+        version: 0.0.14
+
+      hal-externalload-safe-impl-spa3:
+        version: 0.0.6
+
+      hal-forward-looking-camera-heater-impl-1:
+        version: 1.0.3
+
+      hal-front-beam-lever-impl-spa3:
+        version: 1.0.9
+
+      hal-front-electric-drive-impl-spa3:
+        version: 1.2.0
+
+      hal-front-wiper-safe-control-impl-spa3:
+        version: 1.0.0
+
+      hal-gear-shift-lever-impl-spa3:
+        version: 1.3.8
+
+      hal-hands-off-detection-impl-spa3:
+        version: 2.0.0+sdb13.1
+
+      hal-heated-emblem-impl-spa3:
+        version: 1.0.1
+
+      hal-heating-steering-wheel-control-impl-spa3:
+        version: 1.0.6
+
+      hal-high-to-low-voltage-converter-impl-spa3:
+        version: 3.7.4
+
+      hal-high-voltage-charging-control-spa3:
+        version: 1.6.3
+
+      hal-hvec-battery-obd-data-spa3-impl:
+        version: 1.0.11
+
+      hal-hvec-battery-safety-power-limits-spa3-impl:
+        version: 1.0.6
+
+      hal-hvec-battery-state-of-health-spa3-impl:
+        version: 1.0.9
+
+      hal-hvec-charg-estimations-spa3-impl:
+        version: 1.0.5
+
+      hal-hvec-contactor-control-spa3-impl:
+        version: 1.0.5
+
+      hal-hvec-contactor-status-spa3-impl:
+        version: 1.0.5
+
+      hal-hvec-dc-charging-control-spa3-impl:
+        version: 1.0.4
+
+      hal-hvec-electrical-properties-spa3-impl:
+        version: 1.0.11
+
+      hal-hvec-energy-estimations-spa3-impl:
+        version: 1.0.4
+
+      hal-hvec-isolation-control-spa3-impl:
+        version: 1.0.4
+
+      hal-hvec-power-estimations-spa3-impl:
+        version: 1.0.8
+
+      hal-hvec-remote-monitor-control-spa3-impl:
+        version: 1.0.4
+
+      hal-hvec-silent-charging-spa3-impl:
+        version: 1.0.4
+
+      hal-hvec-system-spa3-impl:
+        version: 1.1.18
+
+      hal-hvec-thermal-properties-control-spa3-impl:
+        version: 1.0.5
+
+      hal-hvec-thermal-properties-spa3-impl:
+        version: 1.0.7
+
+      hal-interior-light-control-impl-1:
+        version: 1.2.0
+
+      hal-locking-control-impl-spa3:
+        version: 1.0.9
+
+      hal-locking-monitor-impl-spa3:
+        version: 1.1.8
+
+      hal-locking-safe-control-impl-spa3:
+        version: 1.0.4
+
+      hal-locking-safe-monitor-impl-spa3:
+        version: 1.0.5
+
+      hal-longitudinal-vehicle-control-safe-impl-spa3:
+        version: 1.4.0
+
+      hal-low-voltage-battery-monitor-impl-2:
+        version: 1.0.1
+
+      hal-media-switch-module-ambient-illumination-control-impl-1:
+        version: 1.0.6
+
+      hal-media-switch-monitor-spa3-impl:
+        version: 1.0.10
+
+      hal-mirror-defroster-control-impl-spa3:
+        version: 1.0.1
+
+      hal-occupant-presence-safe-spa3-impl:
+        version: 1.2.3
+
+      hal-occupant-presence-spa3-impl:
+        version: 1.2.3
+
+      hal-odometer-backup-impl-c:
+        version: 1.0.4
+
+      hal-overhead-console-defroster-impl-1:
+        version: 1.0.5
+
+      hal-overhead-hazard-warning-lamp-impl-spa3:
+        version: 1.0.7
+
+      hal-overhead-passenger-airbag-indication-impl-1:
+        version: 1.0.2
+
+      hal-overhead-seat-belt-indication-impl-1:
+        version: 1.0.3
+
+      hal-passenger-airbag-status-control-impl-spa3:
+        version: 1.2.0
+
+      hal-power-steering-control-impl-spa3:
+        version: 0.1.2+rebuild.2
+
+      hal-power-steering-impl-spa3:
+        version: 1.0.3
+
+      hal-rear-console-switch-control-impl-spa3:
+        version: 0.1.6
+
+      hal-rear-electric-drive-impl-spa3:
+        version: 1.2.0
+
+      hal-rear-window-defroster-impl-spa3:
+        version: 1.0.1
+
+      hal-resource-controller-control:
+        version: 1.1.0
+
+      hal-resource-controller-control-impl:
+        version: 1.1.0
+
+      hal-seat-climatisation-control-spa3-impl:
+        version: 0.3.2
+
+      hal-seat-climatisation-monitor-spa3-impl:
+        version: 0.3.6
+
+      hal-seatbelt-control-spa3-impl:
+        version: 1.0.0+rebuild.sdb13x
+
+      hal-shutdown-manager-resource-controller-impl-spa3:
+        version: 1.1.3
+
+      hal-side-mirror-maneuvering-control-impl-spa3:
+        version: 1.0.1
+
+      hal-side-radar-product-function-impl-spa3:
+        version: 1.2.0
+
+      hal-smart-charging-control-spa3:
+        version: 2.6.0
+
+      hal-srs-control-impl-spa3:
+        version: 1.3.3
+
+      hal-srs-message-control-impl-spa3:
+        version: 1.2.1
+
+      hal-srs-monitor-impl-spa3:
+        version: 1.3.0
+
+      hal-srs-odometer-backup-control-impl-spa3:
+        version: 1.0.7
+
+      hal-steering-column-adjustment:
+        version: 1.0.4
+
+      hal-steering-wheel-switch-ad-illumination-spa3-impl:
+        version: 1.0.2
+
+      hal-steering-wheel-switches-impl-spa3:
+        version: 1.0.9
+
+      hal-switch-display-illumination-control-impl-1:
+        version: 2.2.0
+
+      hal-tyre-pressure-control-spa3-impl:
+        version: 0.0.8
+
+      hal-ultrasonic-park-assist-control-impl-spa3:
+        version: 0.1.7
+
+      hal-ultrasonic-park-assist-impl-spa3:
+        version: 0.2.7
+
+      hal-ultrasonic-sensing-control-impl-spa3:
+        version: 0.2.6
+
+      hal-ultrasonic-sensing-impl-spa3:
+        version: 0.2.8+rebuild
+
+      hal-user-manager-impl-spa3:
+        version: 1.0.6
+
+      hal-vcu-shutdown-impl-spa3:
+        version: 2.2.3
+
+      hal-vehicle-energy-management:
+        version: 4.1.1
+
+      hal-vehicle-modes-spa3-impl:
+        version: 1.8.0
+
+      hal-visibility-sensor-cleaning-control-impl-spa3:
+        version: 1.0.0
+
+      hal-windows-monitor-impl-spa3:
+        version: 1.1.3
+
+      hal-wiper-lever-impl-spa3:
+        version: 1.0.2
+
+      hal-wiper-washer-control-impl-spa3:
+        version: 1.2.1
+
+      hal-wiper-washer-monitor-impl-spa3:
+        version: 1.0.2
+
+      hal-wired-devices-charging-control-impl-spa3:
+        version: 1.4.1
+
+      hal-wireless-phone-charger-control-impl-spa3:
+        version: 1.13.4
+
+      hal-wireless-phone-charger-impl-spa3:
+        version: 1.15.6
+
+      high-voltage-energy-coordinator-impl-spa3:
+        version: 1.1.5
+
+      longitudinal-vehicle-control-impl-spa3:
+        version: 1.5.1
+
+      longitudinal-vehicle-control-observer-impl-spa3:
+        version: 1.7.4
+
+      resource-cluster-activator:
+        version: 1.0.11
+
+      resource-controller-spa3:
+        version: 1.2.0
+
+      start-manager-spa3-impl:
+        version: 0.7.8
+
+      steering-column-adjustment:
+        version: 0.2.2
+
+      suspension-spa3:
+        version: 0.1.2
+
+      usage-modes-manager-force-deep-sleep:
+        version: 1.0.0
+
+      vehicle-energy-management-spa3:
+        version: 1.5.0

@@ -1,0 +1,15 @@
+product_group:
+  name: "Cool Group"
+  tag: "cool_group_tag"
+  path: "path/to/cool_group/"
+
+product_group:
+  name: "Hot Group"
+  tag: "hot_group_tag"
+  path: "path/to/hot_group/"
+
+# Remap cool product to hot group
+product:
+  name: "Cool Product"
+  sku: "cool_product_sku"
+  group: "hot_group_tag"
