@@ -12,6 +12,9 @@ dependencies = [
     "pyyaml",
 ]
 
+[dependency-groups]            # PEP 735 groups
+dev = ["pytest>=8.4", "pytest-cov>=6.0"]
+
 [project.optional-dependencies]
 test = ["pytest", "pytest-cov"]
 

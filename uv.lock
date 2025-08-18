@@ -118,6 +118,12 @@ test = [
     { name = "pytest-cov" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "pytest-cov" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "filelock" },
@@ -129,6 +135,12 @@ requires-dist = [
     { name = "tinydb" },
 ]
 provides-extras = ["test"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pytest", specifier = ">=8.4" },
+    { name = "pytest-cov", specifier = ">=6.0" },
+]
 
 [[package]]
 name = "filelock"
